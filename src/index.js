@@ -14,4 +14,4 @@ require('./app/controllers/index')(app);
 
 
 
-module.exports=app.listen(3334);
+module.exports=app.listen(process.env.PORT || 3334);
