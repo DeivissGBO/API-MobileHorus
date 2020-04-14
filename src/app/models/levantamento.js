@@ -44,13 +44,13 @@ const LevantamentoSchema = new mongoose.Schema({
   observacoes:{
     type:String
   },
-  /*objQuantif:{
+  objQuantif:{
     type:String
   },
 
   digitalizacao:{ 
   type:String
-  },*/
+  },
 
   valor_total_preparacao: {
     type: Number,
