@@ -15,6 +15,7 @@ function generateToken(params = {}) {
 
 router.post('/register', async (request, response) => {
     try {
+        console.log(request)
         const { email } = request.body;
         if (await User.findOne({ email }))
             return response.status(400).send({ error: "email já cadastrado" });
