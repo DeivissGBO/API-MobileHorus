@@ -34,6 +34,7 @@ router.post('/register', async (request, response) => {
 
 router.post('/authenticate', async (request, response) => {
     const { email, password } = request.body;
+    console.log(request)
     //no model deixamos senha como n selecionavel por isso precisa selecionar aqui
     const user = await User.findOne({ email }).select('+password');
 

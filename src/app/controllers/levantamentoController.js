@@ -13,6 +13,7 @@ router.use(authMiddleware);
 
 router.get('/', async (request, response) => {
     try {
+        console.log(request)
         const levantamentos = await Levantamento.find().populate('user');
         return response.send({ levantamentos });
 
@@ -65,7 +66,8 @@ router.get('/:levantamentoId', async (request, response) => {
         console.log(req)
         console.log(req.files)
         const files = req.files
-        const  {name, identificacao_cliente, endereco, contato, email, fotos, observacoes ,objQuantif,
+        const  {name, identificacao_cliente, endereco, contato, email, fotos, observacoes,
+        objQuantif,
         digitalizacao,
         valor_total_preparacao,
         valor_total_digitalizacao_imagens,
@@ -205,7 +207,8 @@ router.get('/:levantamentoId', async (request, response) => {
         valor_total_serv_mensal
     } = req.body;
 
-        const levantamento = await Levantamento.create({name, identificacao_cliente, endereco, contato, email, observacoes ,objQuantif,
+        const levantamento = await Levantamento.create({name, identificacao_cliente, endereco, contato, email, observacoes, 
+            objQuantif,
             digitalizacao,
            valor_total_preparacao,
             valor_total_digitalizacao_imagens,
